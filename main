@@ -3,9 +3,7 @@ public class TicTacToe {
     static ArrayList<Integer> cpuPositions = new ArrayList<Integer>();
      
     public static void main (String [] args) {
-        // Create a Scanner object attached to the keyboard
         Scanner scan = new Scanner (System.in);
-        // Gameboard print
         char[][] gameBoard = {
                     {' ', '|', ' ', '|', ' '}, 
                     {'-', '+', '-', '+', '-'},
@@ -15,14 +13,13 @@ public class TicTacToe {
          
         printGameBoard(gameBoard);
          
-        //User input requests
+      
         while(true) {
             System.out.println("Enter your placement (1-9):");
             int playerPos = scan.nextInt();
             while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPositions) || cpuPositions.contains(playerPos)){
                 System.out.println("Position taken! Enter another position:");
                 playerPos = scan.nextInt();
-                //Prevent user from printing on top of CPU
                 while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPos)){
                     System.out.println("Position taken! Enter another position:");
                     playerPos= scan.nextInt();
